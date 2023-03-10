@@ -9,7 +9,6 @@
 #include <SDL2/SDL_video.h>
 #include <SDL2/SDL_ttf.h>
 
-#include"interface.h"
 #include "list.h"
 #include "board.h"
 #include "minmax.h"

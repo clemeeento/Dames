@@ -1,4 +1,4 @@
-all: dames board.o list.o minmax.o jeu.o interface.o
+all: dames board.o list.o minmax.o jeu.o
 
 list.o: list.c list.h
 	gcc -c list.c
@@ -12,8 +12,5 @@ minmax.o :minmax.c minmax.h
 jeu.o: jeu.c jeu.h
 	gcc -c jeu.c
 
-interface.o: interface.c interface.h
-	gcc -c interface.c 
-
-dames: dames.c board.c list.c minmax.c jeu.c interface.c board.h list.h minmax.h jeu.h interface.h item.h
-	gcc -o dames dames.c board.c list.c minmax.c jeu.c interface.c
+dames: dames.c board.c list.c minmax.c jeu.c board.h list.h minmax.h jeu.h item.h
+	gcc -o dames dames.c board.c list.c minmax.c jeu.c -lSDL2
