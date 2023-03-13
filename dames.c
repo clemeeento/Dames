@@ -394,31 +394,22 @@ int main()
 
                         case SDL_MOUSEBUTTONDOWN://Detecte quand le bouton de la souris est clique
 
-                           printf("Clic en %dx / %dy\n",event.button.x,event.button.y);
                            if(event.button.button==SDL_BUTTON_LEFT)
                            {
-                                printf("clic gauche!\n"); 
                                 start_x = event.button.x;
                                 start_y =  event.button.y;
-                                mouse_down = 1; 
-                                //int * init =inputSouris(&start_x, &start_y, &end_x, &end_y);
-                                
-                                
+                                mouse_down = 1;
                            } 
                         break;    
                         
                         case SDL_MOUSEBUTTONUP:
 
-                           printf("relache en %dx / %dy\n",event.button.x,event.button.y);
                             if(event.button.button== SDL_BUTTON_LEFT && mouse_down == 1)
                             {
-                              printf("souris_relache\n");
                                         end_x=0;
                                         end_x = event.button.x;
                                         end_y = event.button.y;
                                         mouse_down = 0;
-                                        //int* final= inputSouris(&start_x,&start_y, &end_x, &end_y);
-                    
                             }
 
                         break;
@@ -426,7 +417,6 @@ int main()
                         case SDL_WINDOWEVENT:
                         //event.window.event
                         if(event.window.event==SDL_WINDOWEVENT_SHOWN)
-                           printf("on ferme la fenetre\n");
                           
                         break;
                             
@@ -442,7 +432,6 @@ int main()
    
         int pos_init=convertPosition(start_x,start_y);//de l'input souris
         int pos_final=convertPosition(end_x,end_y);//de l'input souris
-        printf("voila: %d\n",pos_init);
 
         if((plateau[pos_init]==2 || plateau[pos_init]==4))
         {
